@@ -1,7 +1,7 @@
 {
   "name": "api",
   "version": "1.0.0",
-  "description": "Winpiker main API",
+  "description": "Boilerplate",
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev -r dotenv/config -P tsconfig.json src/index.ts",
