@@ -1,0 +1,51 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "Winpiker main API",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev -r dotenv/config -P tsconfig.json src/index.ts",
+    "start": "node -r dotenv/config build/index.js",
+    "test": "jest"
+  },
+  "author": "pablohildo",
+  "license": "ISC",
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@types/node": "^14.0.5",
+    "@typescript-eslint/eslint-plugin": "^2.34.0",
+    "@typescript-eslint/parser": "^3.0.0",
+    "cross-env": "^7.0.2",
+    "dotenv": "^8.2.0",
+    "eslint": "^7.1.0",
+    "eslint-config-airbnb-typescript": "^7.2.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^2.5.1",
+    "husky": "^4.2.5",
+    "jest": "^26.0.1",
+    "lint-staged": "^10.2.6",
+    "prettier": "^2.0.5",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.6.4"
+  },
+  "dependencies": {
+    "@cubos/eslint-config": "^1.0.310369",
+    "@graphql-tools/code-file-loader": "^6.0.1",
+    "@graphql-tools/load": "^6.0.1",
+    "apollo-server": "^2.13.1",
+    "graphql": "^15.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "cross-env lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.js": "cross-env eslint --fix",
+    "*.{js,css,md}": "cross-env prettier --write"
+  }
+}
