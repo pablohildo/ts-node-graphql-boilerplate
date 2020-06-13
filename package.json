@@ -32,7 +32,6 @@
     "typescript": "^3.6.4"
   },
   "dependencies": {
-    "@cubos/eslint-config": "^1.0.310369",
     "@graphql-tools/code-file-loader": "^6.0.1",
     "@graphql-tools/load": "^6.0.1",
     "apollo-server": ">=2.14.2",
